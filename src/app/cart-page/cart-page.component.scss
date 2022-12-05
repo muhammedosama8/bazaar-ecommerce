@@ -1,0 +1,98 @@
+.cart-page{
+    @media (max-width: 426px){
+        .row{
+            position: relative;
+            .details{
+                    margin-bottom: 4.5rem;
+             }
+        }
+    }
+    .empty-cart{
+        text-align: center;
+        padding: 3rem 0 1rem;
+        img{
+            display: block;
+            margin: auto;
+            @media (max-width: 426px) {
+                width: 100%;
+            }
+        }
+        a{
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 8px 24px;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-top: 24px;
+        }
+    }
+    
+    .details{
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 1rem;
+        text-transform: capitalize;
+        
+        p{
+            margin: 0;
+        }
+        .price{
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            padding-bottom: .5rem;
+            border-bottom: 1px solid #dedede;
+            margin-bottom: 1rem;
+            .bold{
+                font-weight: 700;
+            }
+        }
+        .discount{
+            padding: 1rem;
+            border-bottom: 1px solid #dedede;
+            margin-bottom: 1rem;
+            form{
+                .code{
+                    width: 100%;
+                    margin-bottom: 1rem;
+                    padding: 8px;
+                    border: 1px solid;
+                    border-radius: 5px;
+                }
+                .submit{
+                    width: 100%;
+                    border: 1px solid var(--primary-color);
+                    background: none;
+                    color: var(--primary-color);
+                    padding: 8px;
+                    border-radius: 8px;
+                    font-weight: 500;
+                    opacity: .85;
+                }
+            }
+        }
+        .all-details-price,
+         .delivery,
+         .total-price{
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+        }
+        .all-details-price{
+            p:last-of-type{
+                font-weight: 600;
+            }
+        }
+        .total-price{
+            margin-top: 1rem;
+            border-top: 1px solid #dedede;
+            padding-top: 1rem;
+            p:last-of-type{
+                color: var(--primary-color);
+                font-weight: 600;
+            }
+        }
+       
+    }
+}

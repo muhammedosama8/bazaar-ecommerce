@@ -1,0 +1,42 @@
+<div class="cart-modal">
+    <div class="header">
+        <i class='pi pi-shopping-bag'></i>
+        <h4 class="title">Cart</h4>
+    </div>
+    <div class="cart-list">
+        <div *ngIf='cart.length==0'>
+            <div class="empty-cart">
+                <img src="../../../assets/banners/empty-cart.png" alt="empty cart" />
+            </div>
+        </div>
+        <div *ngIf='cart.length != 0 '>
+            <div class="item d-flex" 
+            *ngFor='let item of cart'>
+                <img src={{item.img}} alt={{item.name}} />
+                <div class="desc">
+                    <a class="name" routerLink='/{{item.id}}'>{{item.name}}</a>
+                    <p class="price">{{item.price}}$ * {{item.quantity}}</p>
+                    <p class="total-price">{{item.totalPrice}}$</p>
+                </div>
+                <div class="quantity">
+                    <button (click)="increment(item.id)">
+                        <i class="pi pi-plus"></i>
+                    </button>
+                    <p>{{item.quantity}}</p>
+                    <button (click)="decrement(item.id)">
+                        <i class="pi pi-minus"></i>
+                    </button>
+                </div> 
+                <div class="remove">
+                    <button (click)="delete(item.id)">
+                        <i class="pi pi-trash"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="buttons" >
+        <a class="view-cart" routerLink="/cart-page">View Cart<span *ngIf='cart.length!=0'>({{totalPrice}}$)</span></a>
+    </div>
+</div>

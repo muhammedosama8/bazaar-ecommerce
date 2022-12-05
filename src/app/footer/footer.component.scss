@@ -1,0 +1,117 @@
+footer{
+    background-color: var(--footer-bg);
+    padding-top: 55px;
+    padding-bottom: 15px;
+    margin-top: 3rem;
+    .logo{
+        @media (max-width: 768px) {
+            margin-top: 2rem;
+        }
+    }
+    .play-store,.app-store{
+        gap: 8px;
+    }
+    .download-log{
+        margin-right: 7px;
+    }
+
+    .about-us, .customer-care{
+        h3{
+            color: #fff;
+        }
+        .subTitle{
+            text-decoration: none;
+            display: block;
+            padding: 0.3rem 0;
+            @media (max-width: 768px) {
+                padding-right: 2rem;
+            }
+        }
+        .subTitle:hover{
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            margin-top: 2rem;
+        }
+    }
+    .contact-us{
+        padding-left: 3rem;
+        
+        p{
+            margin-bottom: 5px;
+        }
+        @media (max-width: 768px) {
+            padding: 0px;
+            margin-top: 2rem;
+        }
+    }
+
+    .title{
+        color: #fff
+    }
+    .subTitle{
+        color: var(--text-color);
+    }
+    .hint{
+        font-size: 10px;
+        font-weight: 600;
+        line-height: 1;
+    }
+    .main{
+        font-size: 15px;
+        font-weight: 900;
+    }
+    .download{
+        @media (max-width: 1024px) {
+            flex-direction: column;
+        }
+        @media (max-width: 768px) {
+            flex-direction: row;
+        }
+        a{
+            margin-right: 10px;
+            padding: 10px 16px;
+            color: white;
+            display: flex;
+            background-color: var(--download-bg);
+            border-radius: 5px;
+            align-items: center;
+            text-decoration: none;
+            @media (max-width: 1024px) {
+                width: fit-content;
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    .developer{
+        color: var(--text-color);
+        margin-bottom: 0;
+        text-transform: capitalize;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        border-top: 2px dashed;
+        padding-top: 15px;
+        margin-top: 20px;
+        @media (max-width: 768px) {
+            padding-top: 12px;
+            margin-top: 18px;
+        }
+        h4{
+            margin: 0;
+            font-size: 18px;
+        }
+        .pi{
+            margin: 0 2px;
+            opacity: .8;
+            color: red;
+        }
+        a{
+            margin-left: 3px;
+            &:hover{
+                color: var(--primary-color)
+            }
+        }
+    }
+}

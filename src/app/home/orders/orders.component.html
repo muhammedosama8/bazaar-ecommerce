@@ -1,0 +1,21 @@
+<div class="orders">
+    <div class="container">
+       <app-carousel [products]="products" [title]="firstTitle"></app-carousel>
+       
+        <div class="exclusive my-5">
+            <div class="row border-container w-100 m-auto">
+                <div class="col-8 col-sm-8 col-md-8 col-lg-8 ex m-auto">
+                    <h5>Exclusive</h5>
+                    <h2>New IPHONE 13</h2>
+                    <p>99.9$ OFF</p>
+                    <button>GET YOURS</button>
+                </div>
+                <div class="col-4 col-sm-4 col-md-4 col-lg-4 img">
+                    <img src='../../assets/orders/iphone.webp' alt='exclusive' />
+                </div>
+            </div>
+        </div>
+
+        <app-carousel [products]="products" [title]="secondTitle"></app-carousel>
+    </div>
+</div>

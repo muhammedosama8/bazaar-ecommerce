@@ -1,0 +1,30 @@
+<div class="address mb-4">
+    <form #addressForm="ngForm" (ngSubmit)="onSubmit(addressForm)">
+        <div class="form">
+            <div class="title">
+                <p>Shipping Address</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <input type="text" placeholder="Full Name" ngModel name="name" required  />
+                </div>
+                <div class="col-lg-6">
+                    <input type="email" placeholder="E-Mail" ngModel required name="email" />
+                </div>
+                <div class="col-lg-6">
+                    <input type="text" placeholder="Phone Number" ngModel required name="phone" />
+                </div>
+                <div class="col-lg-6">
+                    <input type="text" placeholder="Addrees 1" name="address1" required ngModel />
+                </div>
+                <div class="col-lg-6">
+                    <input type="text" placeholder="Address 2" name="address2" ngModel />
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <a class="backToCart" routerLink="/cart-page">Back To Cart</a>
+            <input class="proccedToPayment" type="submit" [disabled]='addressForm.invalid' value="Procced to Payment" />
+        </div>
+    </form>
+</div>

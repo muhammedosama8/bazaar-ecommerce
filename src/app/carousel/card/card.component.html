@@ -1,0 +1,29 @@
+<div class="product text-center my-2">
+    <div class="show">
+        <img src={{product.img}} alt={{product.name}} />
+        <a routerLink='/products/{{product.id}}' class='view'>
+            <i class="pi pi-eye"></i>
+        </a>
+        <button class='favourit'>
+            <i class="pi pi-heart"></i>
+        </button>
+    </div>
+    <div class="details">
+        <a routerLink='/products/{{product.id}}' class='name'>{{product.name}}
+           <span class="brand"> {{product.brand}}
+        </span>
+        </a>
+        <h4 class='price'>{{product.price}}$</h4>
+        <div class="quantity d-flex justify-content-between" >
+            <button (click)="increase()" [disabled]='product.stock == "not-available" '>
+                <i class="pi pi-plus"></i>
+            </button>
+            <p *ngIf="product.stock == 'available' " >{{quantity}}</p>
+            <button (click)="decrease()" [disabled]='product.stock == "not-available" '>
+                <i class="pi pi-minus"></i>
+            </button>
+        </div> 
+        <button *ngIf="product.stock == 'available' "  class='addToCart' (click)="addToCart(product,quantity)">add to cart </button>
+        <button *ngIf="product.stock == 'not-available' " class='outOfStock'>out of stock </button>
+    </div>
+</div>

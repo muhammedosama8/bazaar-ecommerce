@@ -1,0 +1,26 @@
+<div>
+    <div class="item d-flex" *ngFor='let item of cart'>
+        <img src={{item.img}} alt={{item.name}} />
+        <div class="desc">
+            <a class="name" 
+            routerLink='/products/{{item.id}}'>{{item.name}}</a>
+            <p class="price">{{item.price}}$ * {{item.quantity}}</p>
+            <p class="total-price">{{item.totalPrice}}$</p>
+        </div>
+        <div class="quantity">
+            <button (click)="increment(item.id)">
+                <i class="pi pi-plus"></i>
+            </button>
+            <p>{{item.quantity}}</p>
+            <button (click)="decrement(item.id)">
+                <i class="pi pi-minus"></i>
+            </button>
+        </div> 
+        <div class="remove">
+            <button (click)="delete(item.id)">
+                <i class="pi pi-trash"></i>
+            </button>
+        </div>
+    </div>
+    <a class="continue" routerLink="/cart-page/address">continue</a>
+</div>

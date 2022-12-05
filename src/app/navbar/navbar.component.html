@@ -1,0 +1,62 @@
+<div class="topbar">
+    <div class="container d-flex justify-content-between">
+      <div class="topbarLeft d-flex">
+        <div class="phone d-flex">
+          <i class="pi pi-phone"></i>
+          <span>01234567899</span>
+        </div>
+        <div class="email d-flex">
+          <i class="pi pi-envelope"></i>
+          <span>bazaar@gmail.com</span>
+        </div>
+      </div>
+      <div class="topbarRight">
+        <a href='#' class='help'>Need help?</a>
+        <select class="lang">
+          <option>En</option>
+          <option>Ar</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a routerLink='/'>
+            <img src='../../assets/logo.svg' alt='logo' />
+          </a>
+        </div>
+        <div class="search">
+          <i class="pi pi-search"></i>
+          <input text="text" placeholder="Search..." />
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" (click)="openDropdown()">
+              All Categories
+            </button>
+            <ul class="dropdown-menu" id="dropdown-menu" >
+              <li><a class="dropdown-item" routerLink="/products">All Categories</a></li>
+              <li><a class="dropdown-item" routerLink="/products">Clothes </a></li>
+              <li><a class="dropdown-item" routerLink="/products">Laptop</a></li>
+              <li><a class="dropdown-item" routerLink="/products">Desktop</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="icons">
+          <div class="login">
+            <p-button (click)="showLoginDialog()" icon="pi pi-user" ></p-button>
+            <p-dialog [(visible)]="displayLoginModal" [modal]="true" [dismissableMask]="true" [style]="{height: '90vh'}"
+                [draggable]="false" [resizable]="false">
+                <app-login></app-login>
+            </p-dialog>
+          </div>
+          <div class="cart">
+            <span class="numOfProducts" *ngIf="numOfProducts > 0">{{numOfProducts }}</span>
+            <p-button (click)="showCartDialog()" icon="pi pi-shopping-cart" ></p-button>
+            <p-dialog [(visible)]="displayPosition" [position]="'right'" [modal]="true" [styleClass]="'cartModal'" [style]="{width: '30vw'}" [dismissableMask]="true" 
+            [draggable]="false" [resizable]="false">
+              <app-cart-modal></app-cart-modal>
+        </p-dialog>
+          </div>
+        </div>
+      </div>
+    </div>

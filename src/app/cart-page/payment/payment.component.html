@@ -1,0 +1,27 @@
+<div class="payment mb-4">
+    <form #paymentForm="ngForm" (ngSubmit)="onSubmit(paymentForm)">
+        <div class="form">
+            <div class="title">
+                <p>Payment</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <input type="text" placeholder="Card Name" ngModel name="name" required  />
+                </div>
+                <div class="col-lg-12">
+                    <input type="email" placeholder="Card Number" ngModel required name="number" />
+                </div>
+                <div class="col-lg-3">
+                    <input type="text" placeholder="Exp Date" ngModel required name="exp" />
+                </div>
+                <div class="col-lg-3">
+                    <input type="number" placeholder="CVV" min="0" max="9999" name="cvv" required ngModel />
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <a class="backToAddress" routerLink="/cart-page/address">Back To Address</a>
+            <input class="finishOrder" type="submit" [disabled]='paymentForm.invalid' value="Order" />
+        </div>
+    </form>
+</div>

@@ -1,0 +1,18 @@
+<div class="carousel-products">
+    <div class="header d-flex">
+        <h4 class='title-text'>{{title}}</h4>
+        <a routerLink="/products" class='link-hover'>
+            More Products
+            <i class="pi pi-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="products">
+        <p-carousel [value]="products" [numVisible]="5"  [numScroll]="2" [circular]="false" [responsiveOptions]="responsiveOptions">
+            <ng-template let-product pTemplate="product" class="row">
+                <app-card [product]="product"></app-card>
+            </ng-template>
+        </p-carousel>
+    </div>
+
+</div>

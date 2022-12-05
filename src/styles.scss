@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Open Sans,Roboto,-apple-system,BlinkMacSystemFont,Segoe UI,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    background-color: var(--secondary-background-color);
+}
+:root{
+    --primary-color : #D23F57;
+    --secondary-color : #7D879C;
+    --primary-background-color: #2B3445;
+    --secondary-background-color: #F6F9FC;
+    --icon-bg-color: #F3F5F9;
+    --footer-bg: #222935;
+    --download-bg: #161d2b;
+    --text-color: #AEB4BE;
+    --star-color: #faaf00;
+    --table-bg-color: #f7f7fa;
+}
+.link-hover{
+    color: #222;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: capitalize;
+    position: relative;
+    @media (max-width: 321px) {
+        font-size: 16px;
+    }
+    .pi{margin-left: 10px}
+
+    &::after{
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: var(--primary-color);
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: all .25s ease-in;
+    }
+
+    &:hover::after{
+        transform: scaleX(1);
+    }
+    &:hover{
+        color: var(--primary-color);
+    }
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.title-text{
+    position: relative;
+    font-size: 20px;
+    font-weight: 700;
+    opacity: .9;
+    margin:0;
+
+    &::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 16px;
+        background: linear-gradient(to left,transparent 0,var(--primary-color) 100%);
+        right: 0; 
+        z-index: -1;
+        opacity: .4;
+        bottom: -5px;
+    }
+    @media (max-width: 321px) {
+        font-size: 16px;
+        &::before{
+            bottom: 4px;
+        }
+    }
+}
+input:focus{
+    border: 1px solid red;
+}
+input:active{
+    border: 1px solid blue;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--primary-color);
+}
+button, a{
+    cursor: pointer;
+}
+button:disabled{
+    opacity: .7;
+    cursor: not-allowed
+}

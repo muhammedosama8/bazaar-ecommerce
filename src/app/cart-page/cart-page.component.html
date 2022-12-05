@@ -1,0 +1,44 @@
+<div class="cart-page">
+    <div class="container">
+        <div *ngIf='cart.length==0'>
+            <div class="empty-cart">
+                <img src="../../../assets/banners/empty-cart.png" alt="empty cart" />
+                <a routerLink="/">Home</a>
+            </div>
+        </div>
+        <div class="row mt-4" *ngIf='cart.length != 0'>
+            <div class="col-md-8 col-lg-8">
+                <router-outlet></router-outlet>
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <div class="details">
+                    <div class="price">
+                        <p>price</p>
+                        <p class="bold">{{totalPrice}}$</p>
+                    </div>
+                    <div class="discount">
+                        <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+                            <input type="text" 
+                            name="text" required ngModel placeholder="Discount Code for example (dis10)" class="code" />
+                            <input type="submit" value="Apply" class="submit" />
+                        </form>
+                    </div>
+                    <div>
+                        <div class="all-details-price">
+                            <p>total price</p>
+                            <p>{{price_after_discount}}$</p>
+                        </div>
+                        <div class="delivery">
+                            <p>delivery price</p>
+                            <p>{{deleveryPrice}}$</p>
+                        </div>
+                        <div class="total-price">
+                            <p>total price</p>
+                            <p>{{totalAndDeleveyPrice}}$</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
